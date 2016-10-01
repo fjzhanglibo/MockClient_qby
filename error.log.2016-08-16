@@ -1,0 +1,92 @@
+[21] [22:12:52] ERROR   (HttpPostUtil.java:141)     - 
+Server returned HTTP response code: 500 for URL: http://120.31.132.119:8082/backStageEntry.do
+java.io.IOException: Server returned HTTP response code: 500 for URL: http://120.31.132.119:8082/backStageEntry.do
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1625)
+	at com.payment.gateway.tools.HttpPostUtil.postHttp(HttpPostUtil.java:127)
+	at com.lsq.httpclient.wg.Scan.main(Scan.java:48)
+[3] [22:14:03] ERROR   (HttpPostUtil.java:141)     - 
+Server returned HTTP response code: 500 for URL: http://120.31.132.119:8082/backStageEntry.do
+java.io.IOException: Server returned HTTP response code: 500 for URL: http://120.31.132.119:8082/backStageEntry.do
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1625)
+	at com.payment.gateway.tools.HttpPostUtil.postHttp(HttpPostUtil.java:127)
+	at com.lsq.httpclient.wg.Scan.main(Scan.java:48)
+[1] [22:14:17] ERROR   (HttpPostUtil.java:141)     - 
+Server returned HTTP response code: 500 for URL: http://120.31.132.119:8082/backStageEntry.do
+java.io.IOException: Server returned HTTP response code: 500 for URL: http://120.31.132.119:8082/backStageEntry.do
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1625)
+	at com.payment.gateway.tools.HttpPostUtil.postHttp(HttpPostUtil.java:127)
+	at com.lsq.httpclient.wg.Scan.main(Scan.java:48)
+[2] [22:21:16] ERROR   (HttpPostUtil.java:141)     - 
+Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:69)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:157)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:391)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:378)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:473)
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:598)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1322)
+	at com.payment.gateway.tools.HttpPostUtil.postHttp(HttpPostUtil.java:127)
+	at com.lsq.httpclient.wg.Scan.main(Scan.java:48)
+[3] [22:35:58] ERROR   (HttpPostUtil.java:141)     - 
+Server returned HTTP response code: 500 for URL: http://120.31.132.119:8082/backStageEntry.do
+java.io.IOException: Server returned HTTP response code: 500 for URL: http://120.31.132.119:8082/backStageEntry.do
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1625)
+	at com.payment.gateway.tools.HttpPostUtil.postHttp(HttpPostUtil.java:127)
+	at com.lsq.httpclient.wg.Scan.main(Scan.java:48)
+[2] [22:39:23] ERROR   (HttpPostUtil.java:141)     - 
+Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:69)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:157)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:391)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:378)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:473)
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:598)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1322)
+	at com.payment.gateway.tools.HttpPostUtil.postHttp(HttpPostUtil.java:127)
+	at com.lsq.httpclient.wg.Scan.main(Scan.java:48)
+[3] [22:40:26] ERROR   (HttpPostUtil.java:141)     - 
+Connection refused: connect
+java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:69)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:157)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:391)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:378)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:473)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:203)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:290)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:306)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:995)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:931)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:849)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1090)
+	at com.payment.gateway.tools.HttpPostUtil.postHttp(HttpPostUtil.java:121)
+	at com.lsq.httpclient.wg.Scan.main(Scan.java:48)
+[2] [22:47:15] ERROR   (HttpPostUtil.java:141)     - 
+Server returned HTTP response code: 500 for URL: http://120.31.132.119:8082/backStageEntry.do
+java.io.IOException: Server returned HTTP response code: 500 for URL: http://120.31.132.119:8082/backStageEntry.do
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1625)
+	at com.payment.gateway.tools.HttpPostUtil.postHttp(HttpPostUtil.java:127)
+	at com.lsq.httpclient.wg.Scan.main(Scan.java:48)

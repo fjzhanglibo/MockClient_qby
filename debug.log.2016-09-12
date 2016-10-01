@@ -1,0 +1,60 @@
+[0] [20:44:42] INFO   (HttpPostUtil.java:377)     - 
+https方式提交的URL:https://epay.gaohuitong.com:8443/backStageEntry.do
+[25] [20:44:42] INFO   (HttpPostUtil.java:378)     - 
+提交的参数：amount=11&busi_code=AUTHCOMP&merchant_no=549034472780001&notify_url=http%3A%2F%2Flocalhost%3A8082%2Fentry.do&order_no=20160912204442&ori_order_no=549034472780017&sign=e888293ec797e6f727f665669b4450f941c0aaa91f3ffa672e62e7bb1765d7a6&sign_type=SHA256&terminal_no=20000133
+[346] [20:44:42] INFO   (HttpPostUtil.java:387)     - 
+连接类型：class sun.net.www.protocol.https.HttpsURLConnectionImpl
+[347] [20:44:42] INFO   (HttpPostUtil.java:392)     - 
+*** openConnection returns an instanceof javax.net.ssl.HttpsURLConnection
+[77633] [20:45:59] INFO   (HttpPostUtil.java:439)     - 
+https请求发送成功。
+[77634] [20:45:59] INFO   (HttpPostUtil.java:440)     - 
+返回码：200
+[0] [20:47:08] INFO   (HttpPostUtil.java:377)     - 
+https方式提交的URL:https://epay.gaohuitong.com:8443/backStageEntry.do
+[5] [20:47:08] INFO   (HttpPostUtil.java:378)     - 
+提交的参数：amount=100000&busi_code=AUTHCOMP&merchant_no=549034472780001&notify_url=http%3A%2F%2Flocalhost%3A8082%2Fentry.do&order_no=20160912204708&ori_order_no=549034472780017&sign=f40905ca54d083006f688c88df8ec0017c2c225ebc31d0aaa9c13ae9daf68ef3&sign_type=SHA256&terminal_no=20000133
+[319] [20:47:08] INFO   (HttpPostUtil.java:387)     - 
+连接类型：class sun.net.www.protocol.https.HttpsURLConnectionImpl
+[319] [20:47:08] INFO   (HttpPostUtil.java:392)     - 
+*** openConnection returns an instanceof javax.net.ssl.HttpsURLConnection
+[715] [20:47:09] INFO   (HttpPostUtil.java:439)     - 
+https请求发送成功。
+[715] [20:47:09] INFO   (HttpPostUtil.java:440)     - 
+返回码：200
+[0] [20:55:51] INFO   (HttpPostUtil.java:377)     - 
+https方式提交的URL:https://epay.gaohuitong.com:8443/backStageEntry.do
+[5] [20:55:51] INFO   (HttpPostUtil.java:378)     - 
+提交的参数：amount=100000&busi_code=AUTHCOMP&merchant_no=549034472780001&notify_url=http%3A%2F%2Flocalhost%3A8082%2Fentry.do&order_no=20160912205551&ori_order_no=549034472780018&sign=d41bf728260fde11f13856f9ff5bcbb2d3bcef9a75aaa7fe5e7ea3c1857f9449&sign_type=SHA256&terminal_no=20000133
+[306] [20:55:51] INFO   (HttpPostUtil.java:387)     - 
+连接类型：class sun.net.www.protocol.https.HttpsURLConnectionImpl
+[306] [20:55:51] INFO   (HttpPostUtil.java:392)     - 
+*** openConnection returns an instanceof javax.net.ssl.HttpsURLConnection
+[821] [20:55:51] INFO   (HttpPostUtil.java:439)     - 
+https请求发送成功。
+[822] [20:55:51] INFO   (HttpPostUtil.java:440)     - 
+返回码：200
+[1] [20:56:12] INFO   (HttpPostUtil.java:377)     - 
+https方式提交的URL:https://epay.gaohuitong.com:8443/backStageEntry.do
+[9] [20:56:12] INFO   (HttpPostUtil.java:378)     - 
+提交的参数：amount=1000&busi_code=AUTHCOMP&merchant_no=549034472780001&notify_url=http%3A%2F%2Flocalhost%3A8082%2Fentry.do&order_no=20160912205612&ori_order_no=549034472780018&sign=bec284732967862cc6074c129bbbad4343354ac48b44e70617f842c41207e117&sign_type=SHA256&terminal_no=20000133
+[314] [20:56:12] INFO   (HttpPostUtil.java:387)     - 
+连接类型：class sun.net.www.protocol.https.HttpsURLConnectionImpl
+[315] [20:56:12] INFO   (HttpPostUtil.java:392)     - 
+*** openConnection returns an instanceof javax.net.ssl.HttpsURLConnection
+[2754] [20:56:15] INFO   (HttpPostUtil.java:439)     - 
+https请求发送成功。
+[2754] [20:56:15] INFO   (HttpPostUtil.java:440)     - 
+返回码：200
+[0] [21:29:19] INFO   (HttpPostUtil.java:377)     - 
+https方式提交的URL:https://epay.gaohuitong.com:8443/backStageEntry.do
+[9] [21:29:19] INFO   (HttpPostUtil.java:378)     - 
+提交的参数：amount=5000&busi_code=AUTHCOMP&merchant_no=549034472780001&notify_url=http%3A%2F%2Flocalhost%3A8082%2Fentry.do&order_no=20160912212919&ori_order_no=549034472780028&sign=f55455f33e86730555019591c30a634eae5992d492c04670d934b3f80db325e8&sign_type=SHA256&terminal_no=20000133
+[325] [21:29:20] INFO   (HttpPostUtil.java:387)     - 
+连接类型：class sun.net.www.protocol.https.HttpsURLConnectionImpl
+[326] [21:29:20] INFO   (HttpPostUtil.java:392)     - 
+*** openConnection returns an instanceof javax.net.ssl.HttpsURLConnection
+[2788] [21:29:22] INFO   (HttpPostUtil.java:439)     - 
+https请求发送成功。
+[2789] [21:29:22] INFO   (HttpPostUtil.java:440)     - 
+返回码：200
