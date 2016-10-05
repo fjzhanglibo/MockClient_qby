@@ -1,6 +1,0 @@
-[20] [15:15:10] ERROR  (HttpPostUtil.java:141)     - 
-http://120.31.132.114/:8080/backStageEntry.do
-java.io.FileNotFoundException: http://120.31.132.114/:8080/backStageEntry.do
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1623)
-	at com.payment.gateway.tools.HttpPostUtil.postHttp(HttpPostUtil.java:127)
-	at com.lsq.httpclient.wg.Scan.main(Scan.java:48)
