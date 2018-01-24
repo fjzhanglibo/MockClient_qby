@@ -42,7 +42,8 @@ public class TestBindPay {
 			sBuilder.append("<merchant>");
 			sBuilder.append("<head>");
 			sBuilder.append("<version>1.0.0</version>");
-			sBuilder.append("<merchantId>102100000125</merchantId>");
+			sBuilder.append("<merchantId>"+TestUtil.merchantId+"</merchantId>");
+            sBuilder.append("<childMerchantId>"+TestUtil.childMerchantId+"</childMerchantId>");
 			sBuilder.append("<msgType>01</msgType>");
 			sBuilder.append("<tranCode>IFP004</tranCode>");
 			sBuilder.append("<reqMsgId>"
@@ -55,11 +56,11 @@ public class TestBindPay {
 			sBuilder.append("</head>");
 			sBuilder.append("<body>");
 			//sBuilder.append("<terminalId>20000021</terminalId>");
-			sBuilder.append("<terminalId>20000147</terminalId>");
+			sBuilder.append("<terminalId>"+TestUtil.terminalId+"</terminalId>");
 			//信用卡
 //			sBuilder.append("<bindId>1466592553uW</bindId>");
 			//借记卡
-			sBuilder.append("<bindId>1470081232yk</bindId>");
+			sBuilder.append("<bindId>1509649350l1</bindId>");
 			sBuilder.append("<userId>"+TestUtil.userId+"</userId>");
 			//sBuilder.append("<bankCardNo>4367420060540647660</bankCardNo>");
 			sBuilder.append("<oriPayMsgId>20160802021804</oriPayMsgId>");
@@ -68,11 +69,15 @@ public class TestBindPay {
 			//sBuilder.append("<currency>HKD</currency>");
 			sBuilder.append("<currency>HKD</currency>");
 			sBuilder.append("<reckonCurrency>HKD</reckonCurrency>");
-			sBuilder.append("<amount>10</amount>");
+			sBuilder.append("<amount>100</amount>");
 			
 			sBuilder.append("<mobilePhone>13288821832</mobilePhone>");
 			sBuilder.append("<sendReqMsgId>20160802033141</sendReqMsgId>");
 			sBuilder.append("<validateCode>152481</validateCode>");
+            sBuilder.append("<fcCardNo >6217003320058490338</fcCardNo >");
+            sBuilder.append("<userFee>10</userFee>");
+            sBuilder.append("<valid>0421</valid>");
+            sBuilder.append("<cvn2>741</cvn2>");
 			
 			//sBuilder.append("<productCategory>01</productCategory>");
 			sBuilder.append("<productName>Mac笔记\n\r本</productName>");
@@ -98,7 +103,7 @@ public class TestBindPay {
 			List<NameValuePair> nvps = new LinkedList<NameValuePair>();
 			nvps.add(new BasicNameValuePair("encryptData", encryptData));
 			nvps.add(new BasicNameValuePair("encryptKey", encrtptKey));
-			nvps.add(new BasicNameValuePair("merchantId", "102100000125"));
+			nvps.add(new BasicNameValuePair("merchantId", TestUtil.merchantId));
 			nvps.add(new BasicNameValuePair("signData", signData));
 			nvps.add(new BasicNameValuePair("tranCode", "IFP004"));
 			nvps.add(new BasicNameValuePair("callBack","http://localhost:801/callback/ghtBindCard.do"));

@@ -26,7 +26,8 @@ public class TestOther {
 			sBuilder.append("<merchant>");
 			sBuilder.append("<head>");
 			sBuilder.append("<version>1.0.0</version>");
-			sBuilder.append("<merchantId>102100000125</merchantId>");
+			sBuilder.append("<merchantId>"+TestUtil.merchantId+"</merchantId>");
+            sBuilder.append("<childMerchantId>"+TestUtil.childMerchantId+"</childMerchantId>");
 			sBuilder.append("<msgType>01</msgType>");
 			sBuilder.append("<tranCode>IFP099</tranCode>");
 			sBuilder.append("<reqMsgId>"
@@ -81,7 +82,7 @@ public class TestOther {
 			List<NameValuePair> nvps = new LinkedList<NameValuePair>();
 			nvps.add(new BasicNameValuePair("encryptData", encryptData));
 			nvps.add(new BasicNameValuePair("encryptKey", encrtptKey));
-			nvps.add(new BasicNameValuePair("merchantId", "102100000125"));
+			nvps.add(new BasicNameValuePair("merchantId", TestUtil.merchantId));
 			nvps.add(new BasicNameValuePair("signData", signData));
 			nvps.add(new BasicNameValuePair("tranCode", "IFP099"));
 			nvps.add(new BasicNameValuePair("callBack","http://localhost:801/callback/ghtBindCard.do"));

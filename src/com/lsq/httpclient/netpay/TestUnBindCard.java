@@ -25,7 +25,8 @@ public class TestUnBindCard {
 			sBuilder.append("<merchant>");
 			sBuilder.append("<head>");
 			sBuilder.append("<version>1.0.0</version>");
-			sBuilder.append("<merchantId>102100000125</merchantId>");
+			sBuilder.append("<merchantId>"+TestUtil.merchantId+"</merchantId>");
+            sBuilder.append("<childMerchantId>"+TestUtil.childMerchantId+"</childMerchantId>");
 			sBuilder.append("<msgType>01</msgType>");
 			sBuilder.append("<tranCode>IFP002</tranCode>");
 			sBuilder.append("<reqMsgId>"
@@ -36,11 +37,11 @@ public class TestUnBindCard {
 					+ "</reqDate>");
 			sBuilder.append("</head>");
 			sBuilder.append("<body>");
-			sBuilder.append("<bindId>146911774838</bindId>");
+			sBuilder.append("<bindId>1509649350l1</bindId>");
 			sBuilder.append("<userId>"+TestUtil.userId+"</userId>");
 //			sBuilder.append("<mobilePhone>18222920903</mobilePhone>");
-//			sBuilder.append("<sendReqMsgId>20160722004642</sendReqMsgId>");
-//			sBuilder.append("<validateCode>154817</validateCode>");
+			sBuilder.append("<sendReqMsgId>20171117002711</sendReqMsgId>");
+			sBuilder.append("<validateCode>068635</validateCode>");
 			sBuilder.append("</body>");
 			sBuilder.append("</merchant>");
 
@@ -62,7 +63,7 @@ public class TestUnBindCard {
 			List<NameValuePair> nvps = new LinkedList<NameValuePair>();
 			nvps.add(new BasicNameValuePair("encryptData", encryptData));
 			nvps.add(new BasicNameValuePair("encryptKey", encrtptKey));
-			nvps.add(new BasicNameValuePair("merchantId", "102100000125"));
+			nvps.add(new BasicNameValuePair("merchantId", TestUtil.merchantId));
 			nvps.add(new BasicNameValuePair("signData", signData));
 			nvps.add(new BasicNameValuePair("tranCode", "IFP002"));
 			nvps.add(new BasicNameValuePair("callBack","http://localhost:801/callback/ghtBindCard.do"));

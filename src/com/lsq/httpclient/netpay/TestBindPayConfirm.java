@@ -15,6 +15,13 @@ import org.apache.http.message.BasicNameValuePair;
  * 鉴权绑卡
  */
 public class TestBindPayConfirm {
+	/**
+	 * @author: lib     
+	 * @date:   2017年10月31日 下午9:02:35
+	 * @Description: TODO(这里用一句话描述这个方法的作用)
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
 		// 易通私钥
 		// final PrivateKey hzfPriKey =
@@ -43,7 +50,8 @@ public class TestBindPayConfirm {
 			sBuilder.append("<merchant>");
 			sBuilder.append("<head>");
 			sBuilder.append("<version>1.0.0</version>");
-			sBuilder.append("<merchantId>102100000125</merchantId>");
+			sBuilder.append("<merchantId>"+TestUtil.merchantId+"</merchantId>");
+            sBuilder.append("<childMerchantId>"+TestUtil.childMerchantId+"</childMerchantId>");
 			sBuilder.append("<msgType>01</msgType>");
 			sBuilder.append("<tranCode>IFP013</tranCode>");
 			sBuilder.append("<reqMsgId>"
@@ -54,9 +62,9 @@ public class TestBindPayConfirm {
 					+ "</reqDate>");
 			sBuilder.append("</head>");
 			sBuilder.append("<body>");
-			sBuilder.append("<oriReqMsgId>20160902002120</oriReqMsgId>");
+			sBuilder.append("<oriReqMsgId>20171117003204</oriReqMsgId>");
 			sBuilder.append("<userId>"+TestUtil.userId+"</userId>");
-			sBuilder.append("<validateCode>767742</validateCode>");
+			sBuilder.append("<validateCode>502312</validateCode>");
 			//sBuilder.append("<TRANS_TYPE>QUERY</TRANS_TYPE>");
 			sBuilder.append("</body>");
 			sBuilder.append("</merchant>");
@@ -79,7 +87,7 @@ public class TestBindPayConfirm {
 			List<NameValuePair> nvps = new LinkedList<NameValuePair>();
 			nvps.add(new BasicNameValuePair("encryptData", encryptData));
 			nvps.add(new BasicNameValuePair("encryptKey", encrtptKey));
-			nvps.add(new BasicNameValuePair("merchantId", "102100000125"));
+			nvps.add(new BasicNameValuePair("merchantId", TestUtil.merchantId));
 			nvps.add(new BasicNameValuePair("signData", signData));
 			nvps.add(new BasicNameValuePair("tranCode", "IFP013"));
 			//nvps.add(new BasicNameValuePair("TRANS_TYPE", "QUERY"));

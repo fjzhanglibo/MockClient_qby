@@ -15,11 +15,9 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
 
-import org.apache.log4j.Logger;
 
 public class HttpPostUtil {
 
-	Logger logger = Logger.getLogger(HttpPostUtil.class.getName());
 
 
 	/**
@@ -101,7 +99,7 @@ public class HttpPostUtil {
 	}
 
 	public String postHttp(String urlStr, String params, String requestMethod) {
-		// logger.info("http方式提交的URL: "+urlStr + "?" + params);
+		// System.out.println("http方式提交的URL: "+urlStr + "?" + params);
 		PrintWriter out = null;
 		BufferedInputStream in = null;
 		String result = null;
@@ -136,7 +134,7 @@ public class HttpPostUtil {
 			}
 			result = stringbuffer.toString();
 			// System.out.println("remote host respone : "+result);
-			// logger.info("远程主机返回文本结果："+result);
+			// System.out.println("远程主机返回文本结果："+result);
 		} catch (Exception e) {
 			// logger.error(e.getMessage(),e);
 		} finally {
@@ -374,8 +372,8 @@ public class HttpPostUtil {
 	@SuppressWarnings("deprecation")
 	public String postHttpsMain(String urlString, String data, String requestMethod, Object obj)
 			throws NoSuchAlgorithmException, KeyManagementException, IOException {
-		logger.info("https方式提交的URL:" + urlString);
-		logger.info("提交的参数：" + data);
+		System.out.println("https方式提交的URL:" + urlString);
+		System.out.println("提交的参数：" + data);
 		if (data == null)
 			data = "";
 		if (requestMethod == null)
@@ -384,12 +382,12 @@ public class HttpPostUtil {
 
 		URL url = new URL(urlString);
 		URLConnection con = url.openConnection();
-		logger.info("连接类型：" + con.getClass());
+		System.out.println("连接类型：" + con.getClass());
 		BufferedInputStream in = null;
 		String result = null;
 
 		if (con instanceof javax.net.ssl.HttpsURLConnection) {
-			logger.info("*** openConnection returns an instanceof javax.net.ssl.HttpsURLConnection");
+			System.out.println("*** openConnection returns an instanceof javax.net.ssl.HttpsURLConnection");
 
 			// 信任所有证书 开始
 			javax.net.ssl.SSLContext sc = null;
@@ -436,8 +434,8 @@ public class HttpPostUtil {
 			os.write(data);
 			os.flush();
 			if (conn.getResponseCode() == 302 || conn.getResponseCode() == 200) {
-				logger.info("https请求发送成功。");
-				logger.info("返回码：" + conn.getResponseCode());
+				System.out.println("https请求发送成功。");
+				System.out.println("返回码：" + conn.getResponseCode());
 			}
 			// 定义Bufferedinputstream输入流来读取URL的响应
 			in = new BufferedInputStream(conn.getInputStream());
@@ -452,7 +450,7 @@ public class HttpPostUtil {
 			}
 			result = stringbuffer.toString();
 		} else if (con instanceof com.sun.net.ssl.HttpsURLConnection) {
-			logger.info("***openConnection returns an instanceof com.sun.net.ssl.HttpsURLConnection");
+			System.out.println("***openConnection returns an instanceof com.sun.net.ssl.HttpsURLConnection");
 			// 信任所有证书 开始
 			com.sun.net.ssl.SSLContext sc = null;
 			com.sun.net.ssl.TrustManager[] trustAllCerts = new com.sun.net.ssl.TrustManager[] {
@@ -505,8 +503,8 @@ public class HttpPostUtil {
 			os.flush();
 
 			if (conn.getResponseCode() == 302 || conn.getResponseCode() == 200) {
-				logger.info("https请求发送成功。");
-				logger.info("返回码：" + conn.getResponseCode());
+				System.out.println("https请求发送成功。");
+				System.out.println("返回码：" + conn.getResponseCode());
 			}
 			// 定义Bufferedinputstream输入流来读取URL的响应
 			in = new BufferedInputStream(conn.getInputStream());
@@ -522,7 +520,7 @@ public class HttpPostUtil {
 			result = stringbuffer.toString();
 
 		}
-		// logger.info("远程主机返回的文本结果："+result);
+		// System.out.println("远程主机返回的文本结果："+result);
 		return result;
 	}
 	

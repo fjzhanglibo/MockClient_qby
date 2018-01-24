@@ -411,6 +411,7 @@ public abstract class CryptoUtil {
 		} catch (BadPaddingException e) {
 			throw new Exception("BadPaddingException");
 		} catch (IllegalBlockSizeException e) {
+		    e.printStackTrace();
 			throw new Exception("IllegalBlockSizeException");
 		}
 	}

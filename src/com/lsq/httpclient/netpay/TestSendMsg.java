@@ -27,7 +27,8 @@ public class TestSendMsg {
 			sBuilder.append("<merchant>");
 			sBuilder.append("<head>");
 			sBuilder.append("<version>1.0.0</version>");
-			sBuilder.append("<merchantId>102100000125</merchantId>");
+			sBuilder.append("<merchantId>"+TestUtil.merchantId+"</merchantId>");
+//            sBuilder.append("<childMerchantId>"+TestUtil.childMerchantId+"</childMerchantId>");
 			sBuilder.append("<msgType>01</msgType>");
 			sBuilder.append("<tranCode>IFP009</tranCode>");
 			String reqdate=DateFormatUtils.format(new Date(), "yyyyMMddHHmmss");
@@ -40,7 +41,7 @@ public class TestSendMsg {
 			//18500339003	
 			//移动测试号码:18222920903
 			//13660583856
-			sBuilder.append("<oriReqMsgId>20160901232956</oriReqMsgId>");
+			sBuilder.append("<oriReqMsgId>20171117003204</oriReqMsgId>");
 //			sBuilder.append("<oriPayMsgId>000000000078</oriPayMsgId>");
 			sBuilder.append("<currency>156</currency>");
 			sBuilder.append("<amount>10</amount>");
@@ -69,7 +70,7 @@ public class TestSendMsg {
 			List<NameValuePair> nvps = new LinkedList<NameValuePair>();
 			nvps.add(new BasicNameValuePair("encryptData", encryptData));
 			nvps.add(new BasicNameValuePair("encryptKey", encrtptKey));
-			nvps.add(new BasicNameValuePair("merchantId", "102100000125"));
+			nvps.add(new BasicNameValuePair("merchantId", TestUtil.merchantId));
 //			nvps.add(new BasicNameValuePair("merchantId", "I00010"));
 			nvps.add(new BasicNameValuePair("signData", signData));
 			nvps.add(new BasicNameValuePair("tranCode", "IFP009"));

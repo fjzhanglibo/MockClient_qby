@@ -20,18 +20,18 @@ public class AuthComplete {
 		String params = "";
 		String respStr = null;
 		GatewayRequest gatewayRequest = new GatewayRequest(null, null,0);
-		String key = "857e6g8y51b5k365f7v954s50u24h14w";
+		String key = "33c17a7d5c91a908025d9c14d6894104";
 		
 		gatewayRequest.setKey(key);
 		gatewayRequest.setGatewayUrl(TestUtil.reqUrl);
 //		gatewayRequest.setGatewayUrl("http://localhost:8080/payment-gateway/backStageEntry.do");
 		gatewayRequest.setParameter("busi_code","AUTHCOMP");
-		gatewayRequest.setParameter("merchant_no","102100000125");
-		gatewayRequest.setParameter("terminal_no","20000147");
+		gatewayRequest.setParameter("merchant_no","549034459460001");
+		gatewayRequest.setParameter("terminal_no","20000262");
 		
 		gatewayRequest.setParameter("order_no",DateFormatUtils.format(new Date(), "yyyyMMddHHmmss"));
-		gatewayRequest.setParameter("ori_order_no","1474383673941");
-		gatewayRequest.setParameter("amount","0.01");
+		gatewayRequest.setParameter("ori_order_no","1505583825026");
+		gatewayRequest.setParameter("amount","0.1");
 		gatewayRequest.setParameter("notify_url","http://localhost:8082/entry.do");
 		//gatewayRequest.setParameter("sign_type",payTimeStr);
 		gatewayRequest.setParameter("sign_type",Constant.GATEWAY_SIGN_TYPE_SHA256);

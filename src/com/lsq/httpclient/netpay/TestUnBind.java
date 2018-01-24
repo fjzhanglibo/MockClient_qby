@@ -24,7 +24,8 @@ public class TestUnBind {
 			sBuilder.append("<merchant>");
 			sBuilder.append("<head>");
 			sBuilder.append("<version>1.0.0</version>");
-			sBuilder.append("<merchantId>102100000125</merchantId>");
+			sBuilder.append("<merchantId>"+TestUtil.merchantId+"</merchantId>");
+            sBuilder.append("<childMerchantId>"+TestUtil.childMerchantId+"</childMerchantId>");
 			sBuilder.append("<msgType>01</msgType>");
 			sBuilder.append("<tranCode>IFP002</tranCode>");
 			sBuilder.append("<reqMsgId>"
@@ -37,9 +38,9 @@ public class TestUnBind {
 			sBuilder.append("<body>");
 			sBuilder.append("<bindId>I00010010501621700278200056139</bindId>");
 			sBuilder.append("<userId>"+TestUtil.userId+"</userId>");
-			sBuilder.append("<mobilePhone>18222920903</mobilePhone>");
+//			sBuilder.append("<mobilePhone>18222920903</mobilePhone>");
 			sBuilder.append("<sendReqMsgId>20160704170015</sendReqMsgId>");
-			sBuilder.append("<validateCode>540110</validateCode>");
+			sBuilder.append("<validateCode>050644</validateCode>");
 			sBuilder.append("</body>");
 			sBuilder.append("</merchant>");
 
@@ -61,7 +62,7 @@ public class TestUnBind {
 			List<NameValuePair> nvps = new LinkedList<NameValuePair>();
 			nvps.add(new BasicNameValuePair("encryptData", encryptData));
 			nvps.add(new BasicNameValuePair("encryptKey", encrtptKey));
-			nvps.add(new BasicNameValuePair("merchantId", "102100000125"));
+			nvps.add(new BasicNameValuePair("merchantId", TestUtil.merchantId));
 			nvps.add(new BasicNameValuePair("signData", signData));
 			nvps.add(new BasicNameValuePair("tranCode", "IFP002"));
 			nvps.add(new BasicNameValuePair("callBack",

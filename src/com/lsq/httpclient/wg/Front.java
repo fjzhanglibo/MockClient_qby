@@ -18,32 +18,47 @@ import com.payment.gateway.tools.ResponseHelper;
 
 public class Front {
 	public static void main(String[] args) throws Exception {
+	    
+	    System.out.println(new Date());
+	    
 		HttpPostUtil postUtil = new HttpPostUtil();
 		String params = "";
 		String respStr = null;
 		for(int i=0;i<1;i++){
 			GatewayRequest gatewayRequest = new GatewayRequest(null, null,0);
-			String key = "857e6g8y51b5k365f7v954s50u24h14w";
+//			String key = "857e6g8y51b5k365f7v954s50u24h14w";
+			String key = "5debc7ee801aa15e866de26e475de01d";
 			gatewayRequest.setKey(key);
 			gatewayRequest.setGatewayUrl(TestUtil.reqUrl);
 //		gatewayRequest.setGatewayUrl("http://localhost:8080/payment-gateway/backStageEntry.do");
 			gatewayRequest.setParameter("busi_code","FRONT_PAY");
-			gatewayRequest.setParameter("merchant_no","102100000125");
-			gatewayRequest.setParameter("terminal_no","20000147");
+//			gatewayRequest.setParameter("merchant_no","102100000125");
+//			gatewayRequest.setParameter("terminal_no","20000147");
+			
+			gatewayRequest.setParameter("merchant_no","549440155510001");
+            gatewayRequest.setParameter("terminal_no","20000277");
+            gatewayRequest.setParameter("child_merchant_no", "18222920903");
 			
 			gatewayRequest.setParameter("order_no",DateFormatUtils.format(new Date(), "yyyyMMddHHmmss")+RandomUtils.nextInt(10, 1000));
-//			gatewayRequest.setParameter("bank_code","ALIPAY");
-		gatewayRequest.setParameter("bank_code","WECHAT");
-			gatewayRequest.setParameter("amount","0.01");
+//			gatewayRequest.setParameter("bank_code","PUBLICALIPAY");
+		gatewayRequest.setParameter("bank_code","PUBLICWECHAT");
+			gatewayRequest.setParameter("amount","0.1");
 //		gatewayRequest.setParameter("auth_code","280448163006692512");
 			gatewayRequest.setParameter("currency_type","CNY");
 			gatewayRequest.setParameter("sett_currency_type","CNY");
 			gatewayRequest.setParameter("product_name","iPhone18测#试");
 			gatewayRequest.setParameter("product_desc","未来产品");
+//            gatewayRequest.setParameter("app_id","wx29942bf7fd404aa6");
+//            app_id=wxd811f5114e3e56f3
+			
+
+//            gatewayRequest.setParameter("chn_serial_no","407000000001092");
+//            gatewayRequest.setParameter("user_bank_card_no","oFCczwkOvQNd5VNVa85V9yCFqbcE");
 			
 			gatewayRequest.setParameter("notify_url","https://epay.gaohuitong.com:8443/staging/notifyUrl.jsp");
 			gatewayRequest.setParameter("sign_type",Constant.GATEWAY_SIGN_TYPE_SHA256);
-			
+//			gatewayRequest.setParameter("client_ip", "112.94.189.94");
+            gatewayRequest.setParameter("scene_info", "{\"h5_info\":{\"type\":\"Wap\",\"wap_url\":\"http://www.pengjv.com\",\"wap_name\":\"鹏聚电商\"}}");
 			String requestUrl = gatewayRequest.getRequestURL();
 			/*params = postUtil.getQueryString(requestUrl);
 		String callUrl = TestUtil.reqUrl;
@@ -101,6 +116,8 @@ public class Front {
 				System.out.println(postUtil.getResContent());
 				//有可能因为网络原因，请求已经处理，但未收到应答。
 			}
+		     System.out.println(new Date());
+
 			
 		}
 		

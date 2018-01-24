@@ -28,7 +28,7 @@ public class Unite {
 		gatewayRequest.setParameter("terminal_no","20000147");
 		
 		gatewayRequest.setParameter("order_no",DateFormatUtils.format(new Date(), "yyyyMMddHHmmss"));
-//		gatewayRequest.setParameter("bank_code","ALIPAY");
+		gatewayRequest.setParameter("bank_code","APPWECHAT");
 //		gatewayRequest.setParameter("bank_code","PUBLICWECHAT");
 //		gatewayRequest.setParameter("bank_code","ALIPAY");
 		gatewayRequest.setParameter("amount","0.01");

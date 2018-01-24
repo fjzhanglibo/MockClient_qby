@@ -32,14 +32,14 @@ public class Scan {
 		gatewayRequest.setParameter("order_no",DateFormatUtils.format(new Date(), "yyyyMMddHHmmss"));
 //		gatewayRequest.setParameter("bank_code","BACKSTAGEALIPAY");
 		gatewayRequest.setParameter("bank_code","BACKSTAGEWECHAT");
-		gatewayRequest.setParameter("amount","5000");
-		gatewayRequest.setParameter("auth_code","130096008073910175");
+		gatewayRequest.setParameter("amount","0.01");
+		gatewayRequest.setParameter("auth_code","135392010590529192");
 		gatewayRequest.setParameter("currency_type","CNY");
 		gatewayRequest.setParameter("sett_currency_type","CNY");
 		gatewayRequest.setParameter("product_name","iPhone18");
 		gatewayRequest.setParameter("product_desc","未来产品");
 		
-		gatewayRequest.setParameter("notify_url","https://epay.gaohuitong.com:8443/staging/notifyUrl.jsp");
+		gatewayRequest.setParameter("notify_url",TestUtil.reqUrl);
 		gatewayRequest.setParameter("sign_type",Constant.GATEWAY_SIGN_TYPE_SHA256);
 		
 		String requestUrl = gatewayRequest.getRequestURL();

@@ -43,7 +43,8 @@ public class TestBindPaySms {
 			sBuilder.append("<merchant>");
 			sBuilder.append("<head>");
 			sBuilder.append("<version>1.0.0</version>");
-			sBuilder.append("<merchantId>102100000125</merchantId>");
+			sBuilder.append("<merchantId>"+TestUtil.merchantId+"</merchantId>");
+            sBuilder.append("<childMerchantId>"+TestUtil.childMerchantId+"</childMerchantId>");
 			sBuilder.append("<msgType>01</msgType>");
 			sBuilder.append("<tranCode>IFP012</tranCode>");
 			sBuilder.append("<reqMsgId>"
@@ -54,7 +55,7 @@ public class TestBindPaySms {
 					+ "</reqDate>");
 			sBuilder.append("</head>");
 			sBuilder.append("<body>");
-			sBuilder.append("<oriReqMsgId>20160921175845</oriReqMsgId>");
+			sBuilder.append("<oriReqMsgId>20171117002954</oriReqMsgId>");
 			sBuilder.append("<userId>"+TestUtil.userId+"</userId>");
 			sBuilder.append("</body>");
 			sBuilder.append("</merchant>");
@@ -77,7 +78,7 @@ public class TestBindPaySms {
 			List<NameValuePair> nvps = new LinkedList<NameValuePair>();
 			nvps.add(new BasicNameValuePair("encryptData", encryptData));
 			nvps.add(new BasicNameValuePair("encryptKey", encrtptKey));
-			nvps.add(new BasicNameValuePair("merchantId", "102100000125"));
+			nvps.add(new BasicNameValuePair("merchantId", TestUtil.merchantId));
 			nvps.add(new BasicNameValuePair("signData", signData));
 			nvps.add(new BasicNameValuePair("tranCode", "IFP012"));
 			nvps.add(new BasicNameValuePair("callBack","http://localhost:801/callback/ghtBindCard.do"));

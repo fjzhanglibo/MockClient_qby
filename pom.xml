@@ -76,11 +76,11 @@
 			<artifactId>taskWebCommon</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.utrade</groupId>
 			<artifactId>upacp_sdk</artifactId>
 			<version>1.0.0</version>
-		</dependency>
+		</dependency> -->
 		<!-- <dependency> <groupId>ght</groupId> <artifactId>common-sdk</artifactId> 
 			<version>${ght.version}</version> <exclusions> <exclusion> <groupId>com.oracle</groupId> 
 			<artifactId>oracle</artifactId> </exclusion> <exclusion> <groupId>com.oracle</groupId> 
