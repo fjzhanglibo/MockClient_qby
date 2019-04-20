@@ -20,11 +20,13 @@ public class RealTimeDf {
 
 	public static void main(String[] args) throws Exception{
 	
-	 final String url = "http://epay.gaohuitong.com:8083/interfaceWeb/realTimeDF";
-	final PublicKey yhPubKey = CryptoUtil.getRSAPublicKeyByFileSuffix("C:/document/key/549440155510001/GHT_ROOT.pem", "pem", "RSA");
-
-	 final PrivateKey hzfPriKey = CryptoUtil.getRSAPrivateKeyByFileSuffix("C:/document/key/549440155510001/549440155510001.pem", "pem", null, "RSA");
-
+	 final String url = TestUtil.interface_url+"realTimeDF";
+//	 final String url = "https://testapp.sicpay.com:11008/interfaceWeb/realTimeDF";
+//	final PublicKey yhPubKey = CryptoUtil.getRSAPublicKeyByFileSuffix("C:/document/key/549440155510001/GHT_ROOT.pem", "pem", "RSA");
+//
+//	 final PrivateKey hzfPriKey = CryptoUtil.getRSAPrivateKeyByFileSuffix("C:/document/key/549440155510001/549440155510001.pem", "pem", null, "RSA");
+	 PublicKey yhPubKey = TestUtil.getPublicKey();
+     PrivateKey hzfPriKey = TestUtil.getPrivateKey();
 	
 	
 	int i = 0;
@@ -37,8 +39,8 @@ public class RealTimeDf {
 			sBuilder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 			sBuilder.append("<merchant>");
 			sBuilder.append("<head>");
-			sBuilder.append("<version>1.0.0</version>");
-			sBuilder.append("<agencyId>549440155510001</agencyId>");
+			sBuilder.append("<version>2.0.0</version>");
+			sBuilder.append("<agencyId>"+TestUtil.merchantId+"</agencyId>");
 			sBuilder.append("<msgType>01</msgType>");
 			sBuilder.append("<tranCode>200001</tranCode>");
 			sBuilder.append("<reqMsgId>"
@@ -52,16 +54,16 @@ public class RealTimeDf {
 			
 			
 			sBuilder.append("<business_code>B00302</business_code>");
-			sBuilder.append("<user_id>18222920903</user_id>");
-			sBuilder.append("<DF_type>0</DF_type>");
-			sBuilder.append("<bank_code>105</bank_code>");
+			sBuilder.append("<user_id>"+TestUtil.childMerchantId+"</user_id>");
+//			sBuilder.append("<DF_type>1</DF_type>");
+			sBuilder.append("<bank_code>999</bank_code>");
 			sBuilder.append("<account_type>00</account_type>");
-			sBuilder.append("<account_no>6217003320058490338</account_no>");
+			sBuilder.append("<account_no>000000000100741</account_no>");
 			sBuilder.append("<account_name>张立博</account_name>");
-			sBuilder.append("<amount>410</amount>");
-			sBuilder.append("<terminal_no>20000277</terminal_no>");
+			sBuilder.append("<amount>2</amount>");
+			sBuilder.append("<terminal_no>"+TestUtil.terminalId+"</terminal_no>");
 			sBuilder.append("<ID>350303199208300034</ID>");
-            sBuilder.append("<Query_sn>2018011200075311</Query_sn>");
+//            sBuilder.append("<Query_sn>2018011200075311</Query_sn>");
 
 			
 			sBuilder.append("</body>");
@@ -86,7 +88,7 @@ public class RealTimeDf {
 			List<NameValuePair> nvps = new LinkedList<NameValuePair>();
 			nvps.add(new BasicNameValuePair("encryptData", encryptData));
 			nvps.add(new BasicNameValuePair("encryptKey", encrtptKey));
-			nvps.add(new BasicNameValuePair("agencyId", "549440155510001"));
+			nvps.add(new BasicNameValuePair("agencyId", TestUtil.merchantId));
 			nvps.add(new BasicNameValuePair("signData", signData));
 			nvps.add(new BasicNameValuePair("tranCode", "200001"));
 //			nvps.add(new BasicNameValuePair("callBack","http://localhost:801/callback/ghtBindCard.do"));

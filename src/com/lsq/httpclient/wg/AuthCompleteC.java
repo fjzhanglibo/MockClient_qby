@@ -19,16 +19,22 @@ public class AuthCompleteC {
 		String params = "";
 		String respStr = null;
 		GatewayRequest gatewayRequest = new GatewayRequest(null, null,0);
+        String key = "857e6g8y51b5k365f7v954s50u24h14w";
+        
+        gatewayRequest.setKey(key);
 		
-		gatewayRequest.setKey("33c17a7d5c91a908025d9c14d6894104");
-		gatewayRequest.setGatewayUrl(TestUtil.reqUrl);
+//		gatewayRequest.setKey("33c17a7d5c91a908025d9c14d6894104");
+		gatewayRequest.setGatewayUrl(TestUtil1.reqUrl);
 //		gatewayRequest.setGatewayUrl("http://localhost:8080/payment-gateway/backStageEntry.do");
 		gatewayRequest.setParameter("busi_code","AUTHCOMPC");
-		gatewayRequest.setParameter("merchant_no","549034459460001");
-		gatewayRequest.setParameter("terminal_no","20000262");
+//		gatewayRequest.setParameter("merchant_no","549034459460001");
+//		gatewayRequest.setParameter("terminal_no","20000262");
+        
+        gatewayRequest.setParameter("merchant_no","102100000125");
+          gatewayRequest.setParameter("terminal_no","20000147");
 		
 		gatewayRequest.setParameter("order_no",DateFormatUtils.format(new Date(), "yyyyMMddHHmmss"));
-		gatewayRequest.setParameter("ori_order_no","1505569182862");
+		gatewayRequest.setParameter("ori_order_no","20180204204504");
 		gatewayRequest.setParameter("amount","120");
 		gatewayRequest.setParameter("notify_url","http://localhost:8082/entry.do");
 		//gatewayRequest.setParameter("sign_type",payTimeStr);
@@ -36,7 +42,7 @@ public class AuthCompleteC {
 		
 		String requestUrl = gatewayRequest.getRequestURL();
 		params = postUtil.getQueryString(requestUrl);
-		String callUrl = TestUtil.reqUrl;
+		String callUrl = TestUtil1.reqUrl;
 //		String callUrl = "http://localhost:8080/payment-gateway/backStageEntry.do";
 		System.out.println("异步通知:" +callUrl+ params);
 		if (callUrl.indexOf("http://") != -1) {

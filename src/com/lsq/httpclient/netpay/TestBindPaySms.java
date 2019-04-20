@@ -42,9 +42,9 @@ public class TestBindPaySms {
 			sBuilder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 			sBuilder.append("<merchant>");
 			sBuilder.append("<head>");
-			sBuilder.append("<version>1.0.0</version>");
-			sBuilder.append("<merchantId>"+TestUtil.merchantId+"</merchantId>");
-            sBuilder.append("<childMerchantId>"+TestUtil.childMerchantId+"</childMerchantId>");
+			sBuilder.append("<version>2.0.0</version>");
+			sBuilder.append("<agencyId>"+TestUtil.merchantId+"</agencyId>");
+//            sBuilder.append("<childMerchantId>"+TestUtil.childMerchantId+"</childMerchantId>");
 			sBuilder.append("<msgType>01</msgType>");
 			sBuilder.append("<tranCode>IFP012</tranCode>");
 			sBuilder.append("<reqMsgId>"
@@ -55,7 +55,7 @@ public class TestBindPaySms {
 					+ "</reqDate>");
 			sBuilder.append("</head>");
 			sBuilder.append("<body>");
-			sBuilder.append("<oriReqMsgId>20171117002954</oriReqMsgId>");
+			sBuilder.append("<oriReqMsgId>20181102171710</oriReqMsgId>");
 			sBuilder.append("<userId>"+TestUtil.userId+"</userId>");
 			sBuilder.append("</body>");
 			sBuilder.append("</merchant>");
@@ -78,7 +78,7 @@ public class TestBindPaySms {
 			List<NameValuePair> nvps = new LinkedList<NameValuePair>();
 			nvps.add(new BasicNameValuePair("encryptData", encryptData));
 			nvps.add(new BasicNameValuePair("encryptKey", encrtptKey));
-			nvps.add(new BasicNameValuePair("merchantId", TestUtil.merchantId));
+			nvps.add(new BasicNameValuePair("agencyId", TestUtil.merchantId));
 			nvps.add(new BasicNameValuePair("signData", signData));
 			nvps.add(new BasicNameValuePair("tranCode", "IFP012"));
 			nvps.add(new BasicNameValuePair("callBack","http://localhost:801/callback/ghtBindCard.do"));
@@ -87,7 +87,7 @@ public class TestBindPaySms {
 //			 httpClient4Util.doPost("http://localhost:8080/quickInter/channel/commonSyncInter.do",
 //			 null, nvps, null);
 			//byte[] retBytes = httpClient4Util.doPost("http://192.168.80.113:8080/quickInter/channel/commonSyncInter.do",null, nvps, null);
-			byte[] retBytes = httpClient4Util.doPost(TestUtil.url,null, nvps, null);
+			byte[] retBytes = httpClient4Util.doPost(TestUtil.qby_url+"/channel/commonSyncInter.do",null, nvps, null);
 
 //			 byte[] retBytes =httpClient4Util.doPost("http://epay.gaohuitong.com:8082/quickInter/channel/commonSyncInter.do",null, nvps, null);
 			String response = new String(retBytes, "UTF-8");

@@ -27,17 +27,17 @@ public class QryOrder {
 	
 
 	//开发
-	final String url = "http://localhost:8080/interfaceWeb/appOrder/qryWgOrderDetail";
-	final PublicKey yhPubKey = CryptoUtil.getRSAPublicKeyByFileSuffix("C:/document/key/000000158120121/GHT_ROOT.pem", "pem", "RSA");
-	final PrivateKey hzfPriKey = CryptoUtil.getRSAPrivateKeyByFileSuffix("C:/document/key/000000158120121/000000158120121.pem", "pem", null, "RSA");
+//	final String url = "http://localhost:8080/interfaceWeb/appOrder/qryWgOrderDetail";
+//	final PublicKey yhPubKey = CryptoUtil.getRSAPublicKeyByFileSuffix("C:/document/key/000000158120121/GHT_ROOT.pem", "pem", "RSA");
+//	final PrivateKey hzfPriKey = CryptoUtil.getRSAPrivateKeyByFileSuffix("C:/document/key/000000158120121/000000158120121.pem", "pem", null, "RSA");
 	//	PublicKey yhPubKey = TestUtil.getPublicKey();
 //	PrivateKey hzfPriKey = TestUtil.getPrivateKey();
 	
-/*	 final String url = "http://gpay.gaohuitong.com:8086/interfaceWeb2/basicInfo";
+	 final String url = "http://gpay.gaohuitong.com:8086/interfaceWeb2/basicInfo";
+     final String url = "http://epay.gaohuitong.com:8083/interfaceWeb/qryWgOrder";
 	final PublicKey yhPubKey = CryptoUtil.getRSAPublicKeyByFileSuffix("C:/document/key/549440155510001/GHT_ROOT.pem", "pem", "RSA");
 
 	 final PrivateKey hzfPriKey = CryptoUtil.getRSAPrivateKeyByFileSuffix("C:/document/key/549440155510001/549440155510001.pem", "pem", null, "RSA");
-*/
 	
 	
 	int i = 0;
@@ -51,9 +51,9 @@ public class QryOrder {
 			sBuilder.append("<merchant>");
 			sBuilder.append("<head>");
 			sBuilder.append("<version>1.0.0</version>");
-			sBuilder.append("<agencyId>000000158120121</agencyId>");
+			sBuilder.append("<agencyId>549440155510001</agencyId>");
 			sBuilder.append("<msgType>01</msgType>");
-			sBuilder.append("<tranCode>100012</tranCode>");
+			sBuilder.append("<tranCode>100008</tranCode>");
 			sBuilder.append("<reqMsgId>"
 					+ DateFormatUtils.format(new Date(), "yyyyMMddHHmmss")+i+i
 					+ "</reqMsgId>");
@@ -66,10 +66,11 @@ public class QryOrder {
 			
 			sBuilder.append("<tokenId>1111111</tokenId>");
 			sBuilder.append("<merchantId>19910000036</merchantId>");
-			sBuilder.append("<endCreateTime>2017-12-20 00:00:00</endCreateTime>");
+            sBuilder.append("<beginCreateDate>2018-03-16</beginCreateDate>");
+			sBuilder.append("<endCreateDate>2018-03-16</endCreateDate>");
 			sBuilder.append("<page>0</page>");
 			sBuilder.append("<size>20</size>");
-            sBuilder.append("<qryWgType>REFUND</qryWgType>");
+//            sBuilder.append("<qryWgType>REFUND</qryWgType>");
 
 			
 			sBuilder.append("</body>");
@@ -94,9 +95,9 @@ public class QryOrder {
 			List<NameValuePair> nvps = new LinkedList<NameValuePair>();
 			nvps.add(new BasicNameValuePair("encryptData", encryptData));
 			nvps.add(new BasicNameValuePair("encryptKey", encrtptKey));
-			nvps.add(new BasicNameValuePair("agencyId", "000000158120121"));
+			nvps.add(new BasicNameValuePair("agencyId", "549440155510001"));
 			nvps.add(new BasicNameValuePair("signData", signData));
-			nvps.add(new BasicNameValuePair("tranCode", "100012"));
+			nvps.add(new BasicNameValuePair("tranCode", "100008"));
 //			nvps.add(new BasicNameValuePair("callBack","http://localhost:801/callback/ghtBindCard.do"));
 //			 byte[] retBytes = httpClient4Util.doPost("http://localhost:8080/quickInter/channel/commonSyncInter.do", null, nvps, null);
 			byte[] retBytes = httpClient4Util.doPost(url,null, nvps, null);

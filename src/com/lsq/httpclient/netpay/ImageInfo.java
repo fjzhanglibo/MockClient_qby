@@ -44,8 +44,12 @@ public class ImageInfo {
  final PublicKey yhPubKey = CryptoUtil.getRSAPublicKeyByFileSuffix("C:/document/key/549440155510001/GHT_ROOT.pem", "pem", "RSA");
 
   final PrivateKey hzfPriKey = CryptoUtil.getRSAPrivateKeyByFileSuffix("C:/document/key/549440155510001/549440155510001.pem", "pem", null, "RSA");
-
- 
+    
+//    final String url = "http://192.168.10.142:8084/interfaceWeb/addImageInfo";
+//
+//  final PublicKey yhPubKey = CryptoUtil.getRSAPublicKeyByFileSuffix("C:/document/key/GHT_ROOT.pem", "pem", "RSA");
+//
+//  final PrivateKey hzfPriKey = CryptoUtil.getRSAPrivateKeyByFileSuffix("C:/document/key/000000158120121/000000153990021.pem", "pem", null, "RSA");
 	
 	int i = 0;
 //	int j = 0;
@@ -59,6 +63,7 @@ public class ImageInfo {
 			sBuilder.append("<head>");
 			sBuilder.append("<version>2.0.0</version>");
 			sBuilder.append("<agencyId>549440155510001</agencyId>");
+//			sBuilder.append("<agencyId>000000153990021</agencyId>");
 			sBuilder.append("<msgType>01</msgType>");
 			sBuilder.append("<tranCode>100011</tranCode>");
 			sBuilder.append("<reqMsgId>"
@@ -71,8 +76,8 @@ public class ImageInfo {
 			sBuilder.append("<body>");
 			
 			
-			sBuilder.append("<merchantId>00000313</merchantId>");
-            sBuilder.append("<picType>03</picType>");
+			sBuilder.append("<merchantId>00015790</merchantId>");
+            sBuilder.append("<picType>05</picType>");
 
 			
 			sBuilder.append("</body>");
@@ -98,6 +103,7 @@ public class ImageInfo {
 			nvps.put("encryptData", encryptData);
 			nvps.put("encryptKey", encrtptKey);
 			nvps.put("agencyId", "549440155510001");
+//			nvps.put("agencyId", "000000153990021");
 			nvps.put("signData", signData);
 			nvps.put("tranCode", "100011");
 //			nvps.add(new BasicNameValuePair("callBack","http://localhost:801/callback/ghtBindCard.do"));
@@ -107,7 +113,7 @@ public class ImageInfo {
 //		     byte[] retBytes = httpClient4Util.doPost("http://192.168.80.113:8080/quickInter/channel/commonSyncInter.do", null, nvps, null);
 			
 //			File[] files = new File[1];
-			File file = new File("C:/Users/fjptz/Downloads/鹏聚图片/944b0417b9294094b46c56972b6bd7cd.jpg");
+			File file = new File("C:/Users/fjptz/Downloads/鹏聚图片/848c32814d624a3abedf7358e6f2dd92.jpg");
 			Map<String,File> files = new HashMap<String, File>();
 			files.put("img", file);
 			String response = RequestUtil.excuteHttpRequest(url, files, nvps, new HashMap<String, String>());

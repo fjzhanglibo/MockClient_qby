@@ -33,8 +33,8 @@ public class TestBindCard {
 				sBuilder.append("<merchant>");
 				sBuilder.append("<head>");
 				sBuilder.append("<version>2.0.0</version>");
-				sBuilder.append("<merchantId>"+TestUtil.merchantId+"</merchantId>");
-                sBuilder.append("<childMerchantId>"+TestUtil.merchantId+TestUtil.childMerchantId+"</childMerchantId>");
+				sBuilder.append("<agencyId>"+TestUtil.merchantId+"</agencyId>");
+                sBuilder.append("<childMerchantId>"+TestUtil.childMerchantId+"</childMerchantId>");
 				sBuilder.append("<msgType>01</msgType>");
 				sBuilder.append("<tranCode>IFP001</tranCode>");
 				sBuilder.append("<reqMsgId>"
@@ -49,29 +49,29 @@ public class TestBindCard {
 				//sBuilder.append("<bindId>I00010030202622688380400053352</bindId>");
 				sBuilder.append("<userId>"+TestUtil.userId+"</userId>");
 				sBuilder.append("<currency>156</currency>");
-				sBuilder.append("<amount>1</amount>");
-				sBuilder.append("<valid>0421</valid>");
-				sBuilder.append("<cvn2>741</cvn2>");
-				sBuilder.append("<bankCardType>02</bankCardType>");
-				sBuilder.append("<certificateNo>350303199208300034</certificateNo>");
-				sBuilder.append("<accountName>张立博</accountName>");
+//				sBuilder.append("<amount>10</amount>");
+//				sBuilder.append("<valid>0121</valid>");
+//				sBuilder.append("<cvn2>159</cvn2>");
+				sBuilder.append("<bankCardType>01</bankCardType>");
+				sBuilder.append("<certificateNo>341126197709218366</certificateNo>");
+				sBuilder.append("<accountName>全渠道</accountName>");
 				sBuilder.append("<certificateType>ZR01</certificateType>");
-				sBuilder.append("<bankCardNo>6258091656742561</bankCardNo>");
+				sBuilder.append("<bankCardNo>6216261000000000011</bankCardNo>");
 //				sBuilder.append("<bankCardNo>621700083000012"+(int)(1+Math.random()*(10000-1+1))+"</bankCardNo>");
 				sBuilder.append("<mobilePhone>18222920903</mobilePhone>");
-				sBuilder.append("<refundReason>质量不好</refundReason>");
+//				sBuilder.append("<refundReason>质量不好</refundReason>");
 				//sBuilder.append("<oriPayMsgId>2015102800121943</oriPayMsgId>");
-				sBuilder.append("<productCategory>01</productCategory>");
-				sBuilder.append("<productName>Mac笔记本</productName>");
-				sBuilder.append("<productDesc>笔记本电脑</productDesc>");
-				sBuilder.append("<sendReqMsgId>20160704171934</sendReqMsgId>");
-				sBuilder.append("<validateCode>332856</validateCode>");
+//				sBuilder.append("<productCategory>01</productCategory>");
+//				sBuilder.append("<productName>Mac笔记本</productName>");
+//				sBuilder.append("<productDesc>笔记本电脑</productDesc>");
+//				sBuilder.append("<sendReqMsgId>20160704171934</sendReqMsgId>");
+//				sBuilder.append("<validateCode>332856</validateCode>");
 				
 				
-				sBuilder.append("<currency>156</currency>");
-				sBuilder.append("<amount>100</amount>");
-				sBuilder.append("<refundReason>测试退款</refundReason>");
-				sBuilder.append("<oriPayMsgId>201604251954339119</oriPayMsgId>");
+//				sBuilder.append("<currency>156</currency>");
+//				sBuilder.append("<amount>100</amount>");
+//				sBuilder.append("<refundReason>测试退款</refundReason>");
+//				sBuilder.append("<oriPayMsgId>201604251954339119</oriPayMsgId>");
 //				sBuilder.append("<oriReqMsgId>2016042520001011</oriReqMsgId>");
 				
 				
@@ -96,12 +96,12 @@ public class TestBindCard {
 				List<NameValuePair> nvps = new LinkedList<NameValuePair>();
 				nvps.add(new BasicNameValuePair("encryptData", encryptData));
 				nvps.add(new BasicNameValuePair("encryptKey", encrtptKey));
-				nvps.add(new BasicNameValuePair("merchantId", TestUtil.merchantId));
+				nvps.add(new BasicNameValuePair("agencyId", TestUtil.merchantId));
 				nvps.add(new BasicNameValuePair("signData", signData));
 				nvps.add(new BasicNameValuePair("tranCode", "IFP001"));
 				nvps.add(new BasicNameValuePair("callBack","http://localhost:801/callback/ghtBindCard.do"));
 //				 byte[] retBytes = httpClient4Util.doPost("http://localhost:8080/quickInter/channel/commonSyncInter.do", null, nvps, null);
-				byte[] retBytes = httpClient4Util.doPost(TestUtil.url,null, nvps, null);
+				byte[] retBytes = httpClient4Util.doPost(TestUtil.qby_url+"/channel/commonSyncInter.do",null, nvps, null);
 //				byte[] retBytes =httpClient4Util.doPost("http://epay.gaohuitong.com:8082/quickInter/channel/commonSyncInter.do", null, nvps, null);
 //			     byte[] retBytes = httpClient4Util.doPost("http://192.168.80.113:8080/quickInter/channel/commonSyncInter.do", null, nvps, null);
 	

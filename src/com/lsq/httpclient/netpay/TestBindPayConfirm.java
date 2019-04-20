@@ -49,9 +49,9 @@ public class TestBindPayConfirm {
 			sBuilder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 			sBuilder.append("<merchant>");
 			sBuilder.append("<head>");
-			sBuilder.append("<version>1.0.0</version>");
-			sBuilder.append("<merchantId>"+TestUtil.merchantId+"</merchantId>");
-            sBuilder.append("<childMerchantId>"+TestUtil.childMerchantId+"</childMerchantId>");
+			sBuilder.append("<version>2.0.0</version>");
+			sBuilder.append("<agencyId>"+TestUtil.merchantId+"</agencyId>");
+//            sBuilder.append("<childMerchantId>"+TestUtil.childMerchantId+"</childMerchantId>");
 			sBuilder.append("<msgType>01</msgType>");
 			sBuilder.append("<tranCode>IFP013</tranCode>");
 			sBuilder.append("<reqMsgId>"
@@ -62,10 +62,20 @@ public class TestBindPayConfirm {
 					+ "</reqDate>");
 			sBuilder.append("</head>");
 			sBuilder.append("<body>");
-			sBuilder.append("<oriReqMsgId>20171117003204</oriReqMsgId>");
+			sBuilder.append("<oriReqMsgId>20181226104707</oriReqMsgId>");
 			sBuilder.append("<userId>"+TestUtil.userId+"</userId>");
-			sBuilder.append("<validateCode>502312</validateCode>");
+			sBuilder.append("<validateCode>119839</validateCode>"); 
+            sBuilder.append("<deviceId>868942020887986</deviceId>");
+            sBuilder.append("<deviceType>1</deviceType>");
+            sBuilder.append("<userIP>42.199.59.6</userIP>");
+//            sBuilder.append("<valid>1120</valid>");
+//            sBuilder.append("<cvn2>653</cvn2>");
 			//sBuilder.append("<TRANS_TYPE>QUERY</TRANS_TYPE>");
+            
+
+            sBuilder.append("<deviceType>1</deviceType>");
+            sBuilder.append("<userIP>42.199.59.6</userIP>");
+            
 			sBuilder.append("</body>");
 			sBuilder.append("</merchant>");
 
@@ -87,7 +97,7 @@ public class TestBindPayConfirm {
 			List<NameValuePair> nvps = new LinkedList<NameValuePair>();
 			nvps.add(new BasicNameValuePair("encryptData", encryptData));
 			nvps.add(new BasicNameValuePair("encryptKey", encrtptKey));
-			nvps.add(new BasicNameValuePair("merchantId", TestUtil.merchantId));
+			nvps.add(new BasicNameValuePair("agencyId", TestUtil.merchantId));
 			nvps.add(new BasicNameValuePair("signData", signData));
 			nvps.add(new BasicNameValuePair("tranCode", "IFP013"));
 			//nvps.add(new BasicNameValuePair("TRANS_TYPE", "QUERY"));
@@ -96,7 +106,7 @@ public class TestBindPayConfirm {
 //			 byte[] retBytes =
 //			 httpClient4Util.doPost("http://localhost:8080/quickInter/channel/commonSyncInter.do",
 //			 null, nvps, null);
-			byte[] retBytes = httpClient4Util.doPost(TestUtil.url,null, nvps, null);
+			byte[] retBytes = httpClient4Util.doPost(TestUtil.qby_url+"/channel/commonSyncInter.do",null, nvps, null);
 			//byte[] retBytes = httpClient4Util.doPost("http://120.31.132.114:8081/quickInter1/channel/paymentInter.do",null, nvps, null);
 
 //			 byte[] retBytes =httpClient4Util.doPost("http://epay.gaohuitong.com:8082/quickInter/channel/commonSyncInter.do",null, nvps, null);

@@ -22,7 +22,7 @@ public class Reverse {
 
 		gatewayRequest.setKey(key);
 		//gatewayRequest.setGatewayUrl("https://epay.gaohuitong.com:8443/backStageEntry.do");
-		gatewayRequest.setGatewayUrl(TestUtil.reqUrl);
+		gatewayRequest.setGatewayUrl(TestUtil1.reqUrl);
 		gatewayRequest.setParameter("busi_code", "REVERSE");
 		gatewayRequest.setParameter("merchant_no","102100000125");
 		gatewayRequest.setParameter("terminal_no","20000147");
@@ -44,7 +44,7 @@ public class Reverse {
 		String requestUrl = gatewayRequest.getRequestURL();
 		params = postUtil.getQueryString(requestUrl);
 		//String callUrl = "https://epay.gaohuitong.com:8443/backStageEntry.do";
-		String callUrl = TestUtil.reqUrl;
+		String callUrl = TestUtil1.reqUrl;
 		// String callUrl =
 		// "http://localhost:8080/payment-gateway/backStageEntry.do";
 		/*System.out.println("异步通知:" + callUrl + params);
